@@ -1,6 +1,8 @@
 .wrapper {
     display: flex;
     flex-direction: column;
+    width: 360px;
+    margin: 0 auto;
     padding: 0 27px 43px;
 }
 
@@ -14,6 +16,18 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    column-gap: 12px;
+    row-gap: 12px;
+}
+
+.beverage-buy {
+    width: 100%;
+}
+
+.buy-list {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr 2fr;
     column-gap: 12px;
     row-gap: 12px;
 }

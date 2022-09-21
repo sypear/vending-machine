@@ -60,7 +60,7 @@
                     </li>
                 </ul>
             </article>
-            <!-- 음료 목록 섹션 끝 -->
+            <!-- 판매중인 음료 목록 섹션 끝 -->
 
             <!-- 소지금 div 시작 -->
             <div>
@@ -70,44 +70,46 @@
             </div>
             <!-- 소지금 div 끝 -->
 
-            <!-- 음료 선택 아티클 시작 -->
-            <article>
-                <h2 class="sr-only">음료 선택</h2>
+            <!-- 음료 구매 아티클 시작 -->
+            <article class="beverage-buy">
+                <h2 class="sr-only">음료 구매</h2>
 
-                <div>
-                    <h3 class="sr-only">음료 살 돈 입금하기</h3>
-                    <input type="number" placeholder="입금액 입력">
-                    <button type="button">입금</button>
-                </div>
-
-                <div>
-                    <h3 class="sr-only">선택한 음료 확인하고 구매하기</h3>
-                    <ol>
-                        <li>
-                            Original_Cola
-                            <div>
-                                1<span class="sr-only">개</span>
-                            </div>
-                        </li>
-                        <li>
-                            Green_Cola
-                            <div>
-                                2<span class="sr-only">개</span>
-                            </div>
-                        </li>
-                    </ol>
-                    <button type="button">획득</button>
-                </div>
-
-                <div>
-                    <h3 class="sr-only">잔액 확인하고 거스름돈 반환하기</h3>
-                    <div>
-                        잔액: 1000원
+                <div class="buy-list">
+                    <div class="deposit">
+                        <h3 class="sr-only">음료 살 돈 입금하기</h3>
+                        <input type="number" placeholder="입금액 입력">
+                        <button type="button">입금</button>
                     </div>
-                    <button type="button">거스름돈 반환</button>
+
+                    <div class="inquiry-and-return">
+                        <h3 class="sr-only">잔액 조회 및 거스름돈 반환하기</h3>
+                        <div>
+                            잔액: 1000원
+                        </div>
+                        <button type="button">거스름돈 반환</button>
+                    </div>
+
+                    <div class="buy">
+                        <h3 class="sr-only">선택한 음료 확인하고 구매하기</h3>
+                        <ol>
+                            <li>
+                                Original_Cola
+                                <div>
+                                    1<span class="sr-only">개</span>
+                                </div>
+                            </li>
+                            <li>
+                                Green_Cola
+                                <div>
+                                    2<span class="sr-only">개</span>
+                                </div>
+                            </li>
+                        </ol>
+                        <button type="button">획득</button>
+                    </div>
                 </div>
             </article>
-            <!-- 음료 선택 섹션 끝 -->
+            <!-- 음료 구매 아티클 끝 -->
 
             <!-- 획득한 음료 아티클 시작 -->
             <article>
@@ -144,7 +146,7 @@
                     총금액 : 9,000원
                 </strong>
             </article>
-            <!-- 획득한 음료 섹션 끝 -->
+            <!-- 획득한 음료 아티클 끝 -->
         </section>
     </div>
 </body>
