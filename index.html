@@ -5,130 +5,147 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vending Machine</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/font.css">
+    <link rel="stylesheet" href="./styles/layout.css">
+    <link rel="stylesheet" href="./styles/common.css">
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-    <!-- 헤더 시작 -->
-    <header>
-        <h1>
-            <img src="./images/logo_img.png" alt="코카콜라">
-        </h1>
-    </header>
-    <!-- 헤더 끝 -->
+    <div class="wrapper">
+        <!-- 헤더 시작 -->
+        <header class="title-wrapper">
+            <h1>
+                <img class="title-img" src="./images/logo_img.png" alt="코카콜라">
+            </h1>
+        </header>
+        <!-- 헤더 끝 -->
 
-    <!-- 메인 시작 -->
-    <main>
-        <!-- 음료 목록 섹션 시작 -->
-        <section>
-            <h2>음료 목록</h2>
-            <ul>
-                <li>
-                    Original_Cola
-                    <strong>1000원</strong>
-                </li>
-                <li>
-                    Violet_Cola
-                    <strong>1000원</strong>
-                </li>
-                <li>
-                    Yellow_Cola
-                    <strong>1000원</strong>
-                </li>
-                <li>
-                    Cool_Cola
-                    <strong>1000원</strong>
-                </li>
-                <li>
-                    Green_Cola
-                    <strong>1000원</strong>
-                </li>
-                <li>
-                    Orange_Cola
-                    <strong>1000원</strong>
-                </li>
-            </ul>
-        </section>
-        <!-- 음료 목록 섹션 끝 -->
+        <!-- 상품 관련 섹션 시작 -->
+        <section class="vending-machine">
+            <!-- 판매중인 음료 목록 아티클 시작 -->
+            <article class="beverages">
+                <h2 class="sr-only">판매중인 음료 목록</h2>
+                
+                <ul class="beverage-list">
+                    <li class="beverage-item original-cola select" aria-label="선택한 상품">
+                        <img src="./images/original_cola.png" alt="">
+                        <h3>Original_Cola</h3>
+                        <strong class="beverage-item__price">100500원</strong>
+                    </li>
+                    <li class="beverage-item violet-cola sold-out" aria-label="품절된 상품">
+                        <img src="./images/viloet_cola.png" alt="">
+                        <h3>Violet_Cola</h3>
+                        <strong class="beverage-item__price">1000원</strong>
+                    </li>
+                    <li class="beverage-item yellow-cola">
+                        <img src="./images/yellow_cola.png" alt="">
+                        <h3>Yellow_Cola</h3>
+                        <strong class="beverage-item__price">1000원</strong>
+                    </li>
+                    <li class="beverage-item cool-cola">
+                        <img src="./images/cool_cola.png" alt="">
+                        <h3>Cool_Cola</h3>
+                        <strong class="beverage-item__price">1000원</strong>
+                    </li>
+                    <li class="beverage-item green-cola select" aria-label="선택한 상품">
+                        <img src="./images/green_cola.png" alt="">
+                        <h3>Green_Cola</h3>
+                        <strong class="beverage-item__price">1000원</strong>
+                    </li>
+                    <li class="beverage-item orange-cola">
+                        <img src="./images/orange_cola.png" alt="">
+                        <h3>Orange_Cola</h3>
+                        <strong class="beverage-item__price">1000원</strong>
+                    </li>
+                </ul>
+            </article>
+            <!-- 음료 목록 섹션 끝 -->
 
-        <!-- 소지금 div 시작 -->
-        <div>
-            <h2>소지금</h2>
-            <strong>25,000원</strong>
-        </div>
-        <!-- 소지금 div 끝 -->
-
-        <!-- 음료 선택 섹션 시작 -->
-        <section>
-            <h2>음료 선택</h2>
+            <!-- 소지금 div 시작 -->
             <div>
-                <h3>음료 살 돈 입금하기</h3>
-                <input type="number" placeholder="입금액 입력">
-                <button type="button">입금</button>
+                <h2 class="sr-only">소지금</h2>
+
+                <strong>25,000원</strong>
             </div>
+            <!-- 소지금 div 끝 -->
 
-            <div>
-                <h3>선택한 음료 확인하고 구매하기</h3>
+            <!-- 음료 선택 아티클 시작 -->
+            <article>
+                <h2 class="sr-only">음료 선택</h2>
+
+                <div>
+                    <h3 class="sr-only">음료 살 돈 입금하기</h3>
+                    <input type="number" placeholder="입금액 입력">
+                    <button type="button">입금</button>
+                </div>
+
+                <div>
+                    <h3 class="sr-only">선택한 음료 확인하고 구매하기</h3>
+                    <ol>
+                        <li>
+                            Original_Cola
+                            <div>
+                                1<span class="sr-only">개</span>
+                            </div>
+                        </li>
+                        <li>
+                            Green_Cola
+                            <div>
+                                2<span class="sr-only">개</span>
+                            </div>
+                        </li>
+                    </ol>
+                    <button type="button">획득</button>
+                </div>
+
+                <div>
+                    <h3 class="sr-only">잔액 확인하고 거스름돈 반환하기</h3>
+                    <div>
+                        잔액: 1000원
+                    </div>
+                    <button type="button">거스름돈 반환</button>
+                </div>
+            </article>
+            <!-- 음료 선택 섹션 끝 -->
+
+            <!-- 획득한 음료 아티클 시작 -->
+            <article>
+                <h2>획득한 음료</h2>
+
                 <ol>
                     <li>
                         Original_Cola
                         <div>
-                            1<span>개</span>
+                            1<span class="sr-only">개</span>
                         </div>
                     </li>
                     <li>
                         Green_Cola
                         <div>
-                            2<span>개</span>
+                            2<span class="sr-only">개</span>
+                        </div>
+                    </li>
+                    <li>
+                        Orange_Cola
+                        <div>
+                            1<span class="sr-only">개</span>
+                        </div>
+                    </li>
+                    <li>
+                        Violet_Cola
+                        <div>
+                            5<span class="sr-only">개</span>
                         </div>
                     </li>
                 </ol>
-                <button type="button">획득</button>
-            </div>
 
-            <div>
-                <h3>잔액 확인하고 거스름돈 반환하기</h3>
-                <div>
-                    잔액: 1000원
-                </div>
-                <button type="button">거스름돈 반환</button>
-            </div>
+                <strong>
+                    총금액 : 9,000원
+                </strong>
+            </article>
+            <!-- 획득한 음료 섹션 끝 -->
         </section>
-        <!-- 음료 선택 섹션 끝 -->
-
-        <!-- 획득한 음료 섹션 시작 -->
-        <section>
-            <h2>획득한 음료</h2>
-            <ol>
-                <li>
-                    Original_Cola
-                    <div>
-                        1<span>개</span>
-                    </div>
-                </li>
-                <li>
-                    Green_Cola
-                    <div>
-                        2<span>개</span>
-                    </div>
-                </li>
-                <li>
-                    Orange_Cola
-                    <div>
-                        1<span>개</span>
-                    </div>
-                </li>
-                <li>
-                    Violet_Cola
-                    <div>
-                        5<span>개</span>
-                    </div>
-                </li>
-            </ol>
-            <strong>
-                총금액 : 9,000원
-            </strong>
-        </section>
-        <!-- 획득한 음료 섹션 끝 -->
-    </main>
-    <!-- 메인 끝 -->
+    </div>
 </body>
 </html>

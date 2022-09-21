@@ -1,0 +1,19 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0 27px 43px;
+}
+
+.vending-machine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.beverage-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 12px;
+    row-gap: 12px;
+}

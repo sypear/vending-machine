@@ -1,0 +1,81 @@
+:root {
+    /* Colors */
+    --black: #000000;
+    --darkGray: #333333;
+    --lightPurple: #EAE8FE;
+    --lightGray: #BDBDBD;
+    --purple: #6327FE;
+    --white: #FFFFFF;
+}
+
+/* 헤더 내부 요소 스타일 */
+.title-wrapper {
+    margin: 0 auto 18px;
+}
+
+.title-img {
+    display: block;
+    width: 167px;
+}
+
+/* 판매중인 음료 목록 아티클 내부 요소 스타일 */
+.beverage-list {
+    margin-bottom: 20px;
+}
+
+.beverage-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 94px;
+    padding: 11px 5px 9px;
+    border-radius: 10px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.beverage-item img {
+    width: 36px;
+    height: 65px;
+    margin-bottom: 6px;
+}
+
+.beverage-item h3 {
+    font-size: 9px;
+    color: var(--darkGray);
+    margin-bottom: 7px;
+    text-align: center;
+}
+
+.beverage-item .beverage-item__price {
+    padding: 5px 15px 5px 16px;
+    font-size: 12px;
+    color: var(--white);
+    border-radius: 50px;
+    background-color: var(--purple);
+}
+
+.beverage-item.select {
+    box-shadow: 0 0 0 3px var(--purple);
+}
+
+.beverage-item.sold-out {
+    cursor: initial;
+}
+
+.beverage-item.sold-out::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-image: url('./../images/sold_out.png');
+    background-repeat: no-repeat;
+    background-size: 58px auto;
+    background-position: 50% 20px;
+}
