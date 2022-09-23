@@ -3,7 +3,8 @@
     flex-direction: column;
     width: 360px;
     margin: 0 auto;
-    padding: 0 27px 43px;
+    padding: 0 27px;
+    margin-bottom: 43px;
 }
 
 .vending-machine {
@@ -50,6 +51,7 @@
 @media (min-width: 992px) {
     .wrapper {
         min-width: 748px;
+        margin-bottom: 171px;
     }
 
     .vending-machine {

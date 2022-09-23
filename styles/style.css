@@ -160,5 +160,11 @@
 
 /* 반응형 디자인 */
 @media (min-width: 992px) {
+    .title-wrapper {
+        margin-bottom: 67px;
+    }
 
+    .title-img {
+        width: 386px;
+    }
 }
