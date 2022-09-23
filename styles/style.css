@@ -74,7 +74,7 @@
     bottom: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.8);
-    background-image: url('./../images/sold_out.png');
+    background-image: url('./../assets/images/sold_out.png');
     background-repeat: no-repeat;
     background-size: 58px auto;
     background-position: 50% 20px;
