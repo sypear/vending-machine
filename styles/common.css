@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap');
+
+body, button, input {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+}
+
+.fill-button {
+    padding: 6px 5px;
+    border: none;       
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+.fill-button.white {
+    background-color: #FFF;
+}
+
+.fill-button.purple {
+    color: #FFF;
+    background-color: #6327FE;;
+}
+
+.fill-input {
+    font-size: 13px;
+    padding: 7px 10px;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+    background-color: #FFF;
+}
+
+.fill-input::placeholder {
+    text-align: right;
+}
+
+.show-text {
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: #EAE8FE;
+}
+
+.show-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+    background-color: #EAE8FE;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+/* 스크롤바 설정 */
+.show-list::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* 스크롤바 막대 설정 */
+.show-list::-webkit-scrollbar-thumb {
+    background: #FFF;
+    background-clip: padding-box;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    border-radius: 50px;
+}
+
+/* 스크롤바 막대 뒷배경 설정 */
+.show-list::-webkit-scrollbar-track {
+    margin-top: 9px;
+    margin-bottom: 9px;
+    background-color: transparent;
+}
+
+.show-list .list-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 8px 8px 10px;
+    font-size: 9px;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+    background-color: #FFF;
+}
+
+.show-list .list-item img {
+    width: 18px;
+    height: 33px;
+    margin-right: 10px;
+}
+
+.show-list .list-item + .list-item {
+    margin-top: 6px;
+}
+
+.show-list .list-item .item-name {
+    flex-grow: 1;
+    font-size: 9px;
+    color: #333;
+}
+
+.show-list .list-item .item-count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 33px;
+    font-size: 14px;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+}

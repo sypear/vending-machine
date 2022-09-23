@@ -59,7 +59,7 @@
 }
 
 .beverage-item.select {
-    box-shadow: 0 0 0 3px var(--purple);
+    outline: 3px solid var(--purple);
 }
 
 .beverage-item.sold-out {
@@ -78,4 +78,82 @@
     background-repeat: no-repeat;
     background-size: 58px auto;
     background-position: 50% 20px;
+}
+
+/* 음료 구매 아티클 내부 요소 스타일 */
+/* 잔액 조회 및 거스름돈 반환하기 */
+.inquiry-and-return {
+    display: contents;
+}
+
+.inquiry-and-return .balance {
+    display: flex;
+    align-items: center;
+    padding: 6px 10px;
+}
+
+.inquiry-and-return span {
+    margin-left: auto;
+}
+
+/* 음료 살 돈 입금하기 */
+.deposit {
+    display: contents;
+}
+
+/* 음료 구매하기 */
+.buy {
+    display: contents;
+}
+
+/* 소지금 div 내부 요소 스타일 */
+.money {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 32px;
+    padding: 6px 10px;
+}
+
+.money h2 {
+    margin: 0 auto 0 0;
+}
+
+.money strong {
+    font-weight: 700;
+}
+
+/* 획득한 음료 아티클 내부 요소 스타일 */
+.beverage-inventory h2 {
+    margin-bottom: 13px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.beverage-inventory .show-list {
+    height: 364px;
+    margin-bottom: 6px;
+}
+
+.beverage-inventory .sum-money {
+    display: block;
+    font-size: 12px;
+    text-align: right;
+}
+
+/* 동일 스타일 */
+.inquiry-and-return .balance span::after,
+.money h2::after,
+.sum-money span::after {
+    content: ' :';
+    position: relative;
+    top: 1px;
+}
+
+.inquiry-and-return .balance strong,
+.money strong {
+    flex-grow: 1;
+    text-align: right;
 }

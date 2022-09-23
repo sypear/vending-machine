@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vending Machine</title>
     <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="./styles/font.css">
     <link rel="stylesheet" href="./styles/layout.css">
     <link rel="stylesheet" href="./styles/common.css">
     <link rel="stylesheet" href="./styles/style.css">
@@ -25,7 +24,7 @@
         <section class="vending-machine">
             <!-- 판매중인 음료 목록 아티클 시작 -->
             <article class="beverages">
-                <h2 class="sr-only">판매중인 음료 목록</h2>
+                <h2 class="ir_pm">판매중인 음료 목록</h2>
                 
                 <ul class="beverage-list">
                     <li class="beverage-item original-cola select" aria-label="선택한 상품">
@@ -63,87 +62,92 @@
             <!-- 판매중인 음료 목록 섹션 끝 -->
 
             <!-- 소지금 div 시작 -->
-            <div>
-                <h2 class="sr-only">소지금</h2>
-
-                <strong>25,000원</strong>
+            <div class="money show-text">
+                <h2>소지금</h2>
+                <strong>25,000</strong>원
             </div>
             <!-- 소지금 div 끝 -->
 
             <!-- 음료 구매 아티클 시작 -->
             <article class="beverage-buy">
-                <h2 class="sr-only">음료 구매</h2>
+                <h2 class="ir_pm">음료 구매</h2>
 
                 <div class="buy-list">
-                    <div class="deposit">
-                        <h3 class="sr-only">음료 살 돈 입금하기</h3>
-                        <input type="number" placeholder="입금액 입력">
-                        <button type="button">입금</button>
+                    <div class="inquiry-and-return">
+                        <h3 class="ir_pm">잔액 조회 및 거스름돈 반환하기</h3>
+                        <div class="balance show-text">
+                            <span>잔액</span> <strong>1,000</strong>원
+                        </div>
+                        <button type="button" class="fill-button white">거스름돈 반환</button>
                     </div>
 
-                    <div class="inquiry-and-return">
-                        <h3 class="sr-only">잔액 조회 및 거스름돈 반환하기</h3>
-                        <div>
-                            잔액: 1000원
-                        </div>
-                        <button type="button">거스름돈 반환</button>
+                    <div class="deposit">
+                        <h3 class="ir_pm">음료 살 돈 입금하기</h3>
+                        <input type="number" placeholder="입금액 입력" class="fill-input">
+                        <button type="button" class="fill-button white">입금</button>
                     </div>
 
                     <div class="buy">
-                        <h3 class="sr-only">선택한 음료 확인하고 구매하기</h3>
-                        <ol>
-                            <li>
-                                Original_Cola
-                                <div>
-                                    1<span class="sr-only">개</span>
+                        <h3 class="ir_pm">선택한 음료 확인하고 구매하기</h3>
+                        <ol class="show-list">
+                            <li class="list-item">
+                                <img src="./images/original_cola.png" alt="">
+                                <strong class="item-name" aria-label="음료 명">Original_Cola</strong>
+                                <div class="item-count" aria-label="선택 수량">
+                                    12<span class="ir_pm">개</span>
                                 </div>
                             </li>
-                            <li>
-                                Green_Cola
-                                <div>
-                                    2<span class="sr-only">개</span>
+                            <li class="list-item">
+                                <img src="./images/green_cola.png" alt="">
+                                <strong class="item-name" aria-label="음료 명">Green_Cola</strong>
+                                <div class="item-count" aria-label="선택 수량">
+                                    2<span class="ir_pm">개</span>
                                 </div>
                             </li>
                         </ol>
-                        <button type="button">획득</button>
+                        <button type="button" class="fill-button purple">획득</button>
                     </div>
                 </div>
             </article>
             <!-- 음료 구매 아티클 끝 -->
 
             <!-- 획득한 음료 아티클 시작 -->
-            <article>
+            <article class="beverage-inventory">
                 <h2>획득한 음료</h2>
 
-                <ol>
-                    <li>
-                        Original_Cola
-                        <div>
-                            1<span class="sr-only">개</span>
+                <ol class="show-list">
+                    <li class="list-item">
+                        <img src="./images/original_cola.png" alt="">
+                         <strong class="item-name" aria-label="음료 명">Original_Cola</strong>
+                        <div class="item-count" aria-label="구매 수량">
+                            1<span class="ir_pm">개</span>
                         </div>
                     </li>
-                    <li>
-                        Green_Cola
-                        <div>
-                            2<span class="sr-only">개</span>
+                    <li class="list-item">
+                        <img src="./images/green_cola.png" alt="">
+                         <strong class="item-name" aria-label="음료 명">Green_Cola</strong>
+                        <div class="item-count" aria-label="구매 수량">
+                            2<span class="ir_pm">개</span>
                         </div>
                     </li>
-                    <li>
-                        Orange_Cola
-                        <div>
-                            1<span class="sr-only">개</span>
+                    <li class="list-item">
+                        <img src="./images/orange_cola.png" alt="">
+                         <strong class="item-name" aria-label="음료 명">Orange_Cola</strong>
+                        <div class="item-count" aria-label="구매 수량">
+                            1<span class="ir_pm">개</span>
                         </div>
                     </li>
-                    <li>
-                        Violet_Cola
-                        <div>
-                            5<span class="sr-only">개</span>
+                    <li class="list-item">
+                        <img src="./images/viloet_cola.png" alt="">
+                         <strong class="item-name" aria-label="음료 명">Violet_Cola</strong>
+                        <div class="item-count" aria-label="구매 수량">
+                            5<span class="ir_pm">개</span>
                         </div>
                     </li>
                 </ol>
 
-                <strong>
-                    총금액 : 9,000원
+                <strong class="sum-money">
+                    <span>총금액</span> <strong>9,000</strong>원
                 </strong>
             </article>
             <!-- 획득한 음료 아티클 끝 -->

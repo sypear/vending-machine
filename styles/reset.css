@@ -57,7 +57,11 @@ table {
     box-sizing: border-box;
 }
 
-.sr-only {
+button {
+	cursor: pointer;
+}
+
+.ir_pm {
     position: absolute;
     clip: rect(0 0 0 0);
     width: 1px;
@@ -65,3 +69,15 @@ table {
     margin: -1px;
     overflow: hidden;
 }
+
+/* Chrome, Safari, Edge, Opera */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+	-moz-appearance: textfield;
+  }
