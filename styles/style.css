@@ -157,3 +157,8 @@
     flex-grow: 1;
     text-align: right;
 }
+
+/* 반응형 디자인 */
+@media (min-width: 992px) {
+
+}

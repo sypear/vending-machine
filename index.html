@@ -22,134 +22,140 @@
 
         <!-- 상품 관련 섹션 시작 -->
         <section class="vending-machine">
-            <!-- 판매중인 음료 목록 아티클 시작 -->
-            <article class="beverages">
-                <h2 class="ir_pm">판매중인 음료 목록</h2>
-                
-                <ul class="beverage-list">
-                    <li class="beverage-item original-cola select" aria-label="선택한 상품">
-                        <img src="./images/original_cola.png" alt="">
-                        <h3>Original_Cola</h3>
-                        <strong class="beverage-item__price">100500원</strong>
-                    </li>
-                    <li class="beverage-item violet-cola sold-out" aria-label="품절된 상품">
-                        <img src="./images/viloet_cola.png" alt="">
-                        <h3>Violet_Cola</h3>
-                        <strong class="beverage-item__price">1000원</strong>
-                    </li>
-                    <li class="beverage-item yellow-cola">
-                        <img src="./images/yellow_cola.png" alt="">
-                        <h3>Yellow_Cola</h3>
-                        <strong class="beverage-item__price">1000원</strong>
-                    </li>
-                    <li class="beverage-item cool-cola">
-                        <img src="./images/cool_cola.png" alt="">
-                        <h3>Cool_Cola</h3>
-                        <strong class="beverage-item__price">1000원</strong>
-                    </li>
-                    <li class="beverage-item green-cola select" aria-label="선택한 상품">
-                        <img src="./images/green_cola.png" alt="">
-                        <h3>Green_Cola</h3>
-                        <strong class="beverage-item__price">1000원</strong>
-                    </li>
-                    <li class="beverage-item orange-cola">
-                        <img src="./images/orange_cola.png" alt="">
-                        <h3>Orange_Cola</h3>
-                        <strong class="beverage-item__price">1000원</strong>
-                    </li>
-                </ul>
-            </article>
-            <!-- 판매중인 음료 목록 섹션 끝 -->
+            <div class="pc-background left">
+                <!-- 판매중인 음료 목록 아티클 시작 -->
+                <article class="beverages">
+                    <h2 class="ir_pm">판매중인 음료 목록</h2>
+                    
+                    <ul class="beverage-list">
+                        <li class="beverage-item original-cola select" aria-label="선택한 상품">
+                            <img src="./images/original_cola.png" alt="">
+                            <h3>Original_Cola</h3>
+                            <strong class="beverage-item__price">100500원</strong>
+                        </li>
+                        <li class="beverage-item violet-cola sold-out" aria-label="품절된 상품">
+                            <img src="./images/viloet_cola.png" alt="">
+                            <h3>Violet_Cola</h3>
+                            <strong class="beverage-item__price">1000원</strong>
+                        </li>
+                        <li class="beverage-item yellow-cola">
+                            <img src="./images/yellow_cola.png" alt="">
+                            <h3>Yellow_Cola</h3>
+                            <strong class="beverage-item__price">1000원</strong>
+                        </li>
+                        <li class="beverage-item cool-cola">
+                            <img src="./images/cool_cola.png" alt="">
+                            <h3>Cool_Cola</h3>
+                            <strong class="beverage-item__price">1000원</strong>
+                        </li>
+                        <li class="beverage-item green-cola select" aria-label="선택한 상품">
+                            <img src="./images/green_cola.png" alt="">
+                            <h3>Green_Cola</h3>
+                            <strong class="beverage-item__price">1000원</strong>
+                        </li>
+                        <li class="beverage-item orange-cola">
+                            <img src="./images/orange_cola.png" alt="">
+                            <h3>Orange_Cola</h3>
+                            <strong class="beverage-item__price">1000원</strong>
+                        </li>
+                    </ul>
+                </article>
+                <!-- 판매중인 음료 목록 섹션 끝 -->
 
-            <!-- 소지금 div 시작 -->
-            <div class="money show-text">
-                <h2>소지금</h2>
-                <strong>25,000</strong>원
-            </div>
-            <!-- 소지금 div 끝 -->
+                <!-- 음료 구매 아티클 시작 -->
+                <article class="beverage-buy">
+                    <h2 class="ir_pm">음료 구매</h2>
 
-            <!-- 음료 구매 아티클 시작 -->
-            <article class="beverage-buy">
-                <h2 class="ir_pm">음료 구매</h2>
-
-                <div class="buy-list">
-                    <div class="inquiry-and-return">
-                        <h3 class="ir_pm">잔액 조회 및 거스름돈 반환하기</h3>
-                        <div class="balance show-text">
-                            <span>잔액</span> <strong>1,000</strong>원
+                    <div class="buy-list">
+                        <div class="inquiry-and-return">
+                            <h3 class="ir_pm">잔액 조회 및 거스름돈 반환하기</h3>
+                            <div class="balance show-text">
+                                <span>잔액</span> <strong>1,000</strong>원
+                            </div>
+                            <button type="button" class="fill-button white">거스름돈 반환</button>
                         </div>
-                        <button type="button" class="fill-button white">거스름돈 반환</button>
-                    </div>
 
-                    <div class="deposit">
-                        <h3 class="ir_pm">음료 살 돈 입금하기</h3>
-                        <input type="number" placeholder="입금액 입력" class="fill-input">
-                        <button type="button" class="fill-button white">입금</button>
-                    </div>
+                        <div class="deposit">
+                            <h3 class="ir_pm">음료 살 돈 입금하기</h3>
+                            <input type="number" placeholder="입금액 입력" class="fill-input">
+                            <button type="button" class="fill-button white">입금</button>
+                        </div>
 
-                    <div class="buy">
-                        <h3 class="ir_pm">선택한 음료 확인하고 구매하기</h3>
-                        <ol class="show-list">
-                            <li class="list-item">
-                                <img src="./images/original_cola.png" alt="">
-                                <strong class="item-name" aria-label="음료 명">Original_Cola</strong>
-                                <div class="item-count" aria-label="선택 수량">
-                                    12<span class="ir_pm">개</span>
-                                </div>
-                            </li>
-                            <li class="list-item">
-                                <img src="./images/green_cola.png" alt="">
-                                <strong class="item-name" aria-label="음료 명">Green_Cola</strong>
-                                <div class="item-count" aria-label="선택 수량">
-                                    2<span class="ir_pm">개</span>
-                                </div>
-                            </li>
-                        </ol>
-                        <button type="button" class="fill-button purple">획득</button>
+                        <div class="buy">
+                            <h3 class="ir_pm">선택한 음료 확인하고 구매하기</h3>
+                            <ol class="show-list">
+                                <li class="list-item">
+                                    <img src="./images/original_cola.png" alt="">
+                                    <strong class="item-name" aria-label="음료 명">Original_Cola</strong>
+                                    <div class="item-count" aria-label="선택 수량">
+                                        12<span class="ir_pm">개</span>
+                                    </div>
+                                </li>
+                                <li class="list-item">
+                                    <img src="./images/green_cola.png" alt="">
+                                    <strong class="item-name" aria-label="음료 명">Green_Cola</strong>
+                                    <div class="item-count" aria-label="선택 수량">
+                                        2<span class="ir_pm">개</span>
+                                    </div>
+                                </li>
+                            </ol>
+                            <button type="button" class="fill-button purple">획득</button>
+                        </div>
+                    </div>
+                </article>
+                <!-- 음료 구매 아티클 끝 -->
+            </div>
+
+            <div class="right">
+                <!-- 소지금 div 시작 -->
+                <div class="pc-background right-top">
+                    <div class="money show-text">
+                        <h2>소지금</h2>
+                        <strong>25,000</strong>원
                     </div>
                 </div>
-            </article>
-            <!-- 음료 구매 아티클 끝 -->
+                <!-- 소지금 div 끝 -->
+                
+                <!-- 획득한 음료 아티클 시작 -->
+                <article class="beverage-inventory pc-background right-bottom">
+                    <h2>획득한 음료</h2>
 
-            <!-- 획득한 음료 아티클 시작 -->
-            <article class="beverage-inventory">
-                <h2>획득한 음료</h2>
+                    <ol class="show-list">
+                        <li class="list-item">
+                            <img src="./images/original_cola.png" alt="">
+                            <strong class="item-name" aria-label="음료 명">Original_Cola</strong>
+                            <div class="item-count" aria-label="구매 수량">
+                                1<span class="ir_pm">개</span>
+                            </div>
+                        </li>
+                        <li class="list-item">
+                            <img src="./images/green_cola.png" alt="">
+                            <strong class="item-name" aria-label="음료 명">Green_Cola</strong>
+                            <div class="item-count" aria-label="구매 수량">
+                                2<span class="ir_pm">개</span>
+                            </div>
+                        </li>
+                        <li class="list-item">
+                            <img src="./images/orange_cola.png" alt="">
+                            <strong class="item-name" aria-label="음료 명">Orange_Cola</strong>
+                            <div class="item-count" aria-label="구매 수량">
+                                1<span class="ir_pm">개</span>
+                            </div>
+                        </li>
+                        <li class="list-item">
+                            <img src="./images/viloet_cola.png" alt="">
+                            <strong class="item-name" aria-label="음료 명">Violet_Cola</strong>
+                            <div class="item-count" aria-label="구매 수량">
+                                5<span class="ir_pm">개</span>
+                            </div>
+                        </li>
+                    </ol>
 
-                <ol class="show-list">
-                    <li class="list-item">
-                        <img src="./images/original_cola.png" alt="">
-                         <strong class="item-name" aria-label="음료 명">Original_Cola</strong>
-                        <div class="item-count" aria-label="구매 수량">
-                            1<span class="ir_pm">개</span>
-                        </div>
-                    </li>
-                    <li class="list-item">
-                        <img src="./images/green_cola.png" alt="">
-                         <strong class="item-name" aria-label="음료 명">Green_Cola</strong>
-                        <div class="item-count" aria-label="구매 수량">
-                            2<span class="ir_pm">개</span>
-                        </div>
-                    </li>
-                    <li class="list-item">
-                        <img src="./images/orange_cola.png" alt="">
-                         <strong class="item-name" aria-label="음료 명">Orange_Cola</strong>
-                        <div class="item-count" aria-label="구매 수량">
-                            1<span class="ir_pm">개</span>
-                        </div>
-                    </li>
-                    <li class="list-item">
-                        <img src="./images/viloet_cola.png" alt="">
-                         <strong class="item-name" aria-label="음료 명">Violet_Cola</strong>
-                        <div class="item-count" aria-label="구매 수량">
-                            5<span class="ir_pm">개</span>
-                        </div>
-                    </li>
-                </ol>
-
-                <strong class="sum-money">
-                    <span>총금액</span> <strong>9,000</strong>원
-                </strong>
-            </article>
+                    <strong class="sum-money">
+                        <span>총금액</span> <strong>9,000</strong>원
+                    </strong>
+                </article>
+            </div>
             <!-- 획득한 음료 아티클 끝 -->
         </section>
     </div>

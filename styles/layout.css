@@ -12,6 +12,10 @@
     align-items: center;
 }
 
+.vending-machine > div {
+    width: 100%;
+}
+
 .beverage-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -41,4 +45,48 @@
 .beverage-inventory {
     order: 2;
     width: 100%;
+}
+
+@media (min-width: 992px) {
+    .wrapper {
+        min-width: 748px;
+    }
+
+    .vending-machine {
+        flex-direction: row;
+    }
+
+    .vending-machine > div {
+        width: initial;
+    }
+
+    .vending-machine .right {
+        width: 360px;
+    }
+
+    .vending-machine .pc-background.left {
+        padding: 29px 27px 28px;
+        margin-right: 28px;
+    }
+
+    .vending-machine .pc-background.right-top {
+        padding: 9px 27px;
+        margin-bottom: 20px;
+    }
+
+    .vending-machine .pc-background.right-bottom {
+        padding: 25px 27px 26px;
+    }
+
+    .buy-list {
+        margin-bottom: initial;
+    }
+
+    .money {
+        margin-bottom: initial;
+    }
+
+    .beverage-inventory {
+        height: 474px;
+    }
 }

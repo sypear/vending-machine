@@ -108,3 +108,13 @@ body, button, input {
     border: 1px solid #BDBDBD;
     border-radius: 5px;
 }
+
+@media (min-width: 992px) {
+    body {
+        background-color: #EAE8FE;
+    }
+
+    .pc-background {
+        background-color: #FFF;
+    }
+}
