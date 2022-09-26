@@ -4,9 +4,12 @@
     width: auto;
     min-width: 320px;
     max-width: 360px;
-    margin: 0 auto;
+    margin: 0 auto 43px auto;
     padding: 0 27px;
-    margin-bottom: 43px;
+}
+
+.title-wrapper {
+    margin: 0 auto 18px;
 }
 
 .vending-machine {
@@ -19,41 +22,14 @@
     width: 100%;
 }
 
-.beverage-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    column-gap: 12px;
-    row-gap: 12px;
-}
-
-.beverage-buy {
-    width: 100%;
-}
-
-.money {
-    order: 1;
-    margin-bottom: 41px;
-}
-
-.buy-list {
-    display: grid;
-    grid-template-columns: 200px 94px;
-    grid-template-rows: 32px 32px 108px;
-    column-gap: 12px;
-    row-gap: 12px;
-    margin-bottom: 20px;
-}
-
-.beverage-inventory {
-    order: 2;
-    width: 100%;
-}
-
 @media (min-width: 992px) {
     .wrapper {
         min-width: 748px;
         margin-bottom: 171px;
+    }
+
+    .title-wrapper {
+        margin-bottom: 67px;
     }
 
     .vending-machine {
@@ -62,35 +38,5 @@
 
     .vending-machine > div {
         width: initial;
-    }
-
-    .vending-machine .right {
-        width: 360px;
-    }
-
-    .vending-machine .pc-background.left {
-        padding: 29px 27px 28px;
-        margin-right: 28px;
-    }
-
-    .vending-machine .pc-background.right-top {
-        padding: 9px 27px;
-        margin-bottom: 20px;
-    }
-
-    .vending-machine .pc-background.right-bottom {
-        padding: 25px 27px 26px;
-    }
-
-    .buy-list {
-        margin-bottom: initial;
-    }
-
-    .money {
-        margin-bottom: initial;
-    }
-
-    .beverage-inventory {
-        height: 474px;
     }
 }

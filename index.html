@@ -26,84 +26,84 @@
 
         <!-- 상품 관련 섹션 시작 -->
         <section class="vending-machine">
-            <div class="pc-background left">
+            <div class="back-color white left">
                 <!-- 판매중인 음료 목록 아티클 시작 -->
-                <article class="beverages">
+                <article class="product">
                     <h2 class="ir_pm">판매중인 음료 목록</h2>
                     
-                    <ul class="beverage-list">
-                        <li class="beverage-item original-cola select" aria-label="선택한 상품">
+                    <ul class="box-list">
+                        <li class="item select" aria-label="선택한 상품">
                             <img src="./assets/images/original_cola.png" alt="">
                             <h3>Original_Cola</h3>
-                            <strong class="beverage-item__price">100500원</strong>
+                            <strong class="item-price">1000원</strong>
                         </li>
-                        <li class="beverage-item violet-cola sold-out" aria-label="품절된 상품">
+                        <li class="item sold-out" aria-label="품절된 상품">
                             <img src="./assets/images/viloet_cola.png" alt="">
                             <h3>Violet_Cola</h3>
-                            <strong class="beverage-item__price">1000원</strong>
+                            <strong class="item-price">1000원</strong>
                         </li>
-                        <li class="beverage-item yellow-cola">
+                        <li class="item">
                             <img src="./assets/images/yellow_cola.png" alt="">
                             <h3>Yellow_Cola</h3>
-                            <strong class="beverage-item__price">1000원</strong>
+                            <strong class="item-price">1000원</strong>
                         </li>
-                        <li class="beverage-item cool-cola">
+                        <li class="item">
                             <img src="./assets/images/cool_cola.png" alt="">
                             <h3>Cool_Cola</h3>
-                            <strong class="beverage-item__price">1000원</strong>
+                            <strong class="item-price">1000원</strong>
                         </li>
-                        <li class="beverage-item green-cola select" aria-label="선택한 상품">
+                        <li class="item select" aria-label="선택한 상품">
                             <img src="./assets/images/green_cola.png" alt="">
                             <h3>Green_Cola</h3>
-                            <strong class="beverage-item__price">1000원</strong>
+                            <strong class="item-price">1000원</strong>
                         </li>
-                        <li class="beverage-item orange-cola">
+                        <li class="item">
                             <img src="./assets/images/orange_cola.png" alt="">
                             <h3>Orange_Cola</h3>
-                            <strong class="beverage-item__price">1000원</strong>
+                            <strong class="item-price">1000원</strong>
                         </li>
                     </ul>
                 </article>
                 <!-- 판매중인 음료 목록 섹션 끝 -->
 
                 <!-- 음료 구매 아티클 시작 -->
-                <article class="beverage-buy">
+                <article class="product-buy">
                     <h2 class="ir_pm">음료 구매</h2>
 
-                    <div class="buy-list">
-                        <div class="inquiry-and-return">
-                            <h3 class="ir_pm">잔액 조회 및 거스름돈 반환하기</h3>
-                            <div class="balance show-text">
+                    <div class="buy">
+                        <div class="buy__manage-money">
+                            <h3 class="ir_pm">나의 잔액 조회 및 거스름돈 반환하기</h3>
+                            <div class="balance text-box purple">
                                 <span>잔액</span> <strong>1,000</strong>원
                             </div>
-                            <button type="button" class="fill-button white">거스름돈 반환</button>
+                            <button type="button" class="round-button white">거스름돈 반환</button>
                         </div>
 
-                        <div class="deposit">
+                        <div class="buy__put-money">
                             <h3 class="ir_pm">음료 살 돈 입금하기</h3>
-                            <input type="number" placeholder="입금액 입력" class="fill-input">
-                            <button type="button" class="fill-button white">입금</button>
+                            <input type="number" placeholder="입금액 입력" class="text-input">
+                            <button type="button" class="round-button white">입금</button>
                         </div>
 
-                        <div class="buy">
+                        <div class="buy__choice">
                             <h3 class="ir_pm">선택한 음료 확인하고 구매하기</h3>
-                            <ol class="show-list">
-                                <li class="list-item">
+                            <ol class="scroll-list">
+                                <li class="scroll-list__item">
                                     <img src="./assets/images/original_cola.png" alt="">
-                                    <strong class="item-name" aria-label="음료 명">Original_Cola</strong>
-                                    <div class="item-count" aria-label="선택 수량">
+                                    <strong class="scroll-list__item-name" aria-label="음료 명">Original_Cola</strong>
+                                    <div class="scroll-list__item-count" aria-label="선택 수량">
                                         12<span class="ir_pm">개</span>
                                     </div>
                                 </li>
-                                <li class="list-item">
+                                <li class="scroll-list__item">
                                     <img src="./assets/images/green_cola.png" alt="">
-                                    <strong class="item-name" aria-label="음료 명">Green_Cola</strong>
-                                    <div class="item-count" aria-label="선택 수량">
+                                    <strong class="scroll-list__item-name" aria-label="음료 명">Green_Cola</strong>
+                                    <div class="scroll-list__item-count" aria-label="선택 수량">
                                         2<span class="ir_pm">개</span>
                                     </div>
                                 </li>
                             </ol>
-                            <button type="button" class="fill-button purple">획득</button>
+                            <button type="button" class="round-button purple">획득</button>
                         </div>
                     </div>
                 </article>
@@ -112,8 +112,8 @@
 
             <div class="right">
                 <!-- 소지금 div 시작 -->
-                <div class="pc-background right-top">
-                    <div class="money show-text">
+                <div class="back-color white right-top">
+                    <div class="money text-box purple">
                         <h2>소지금</h2>
                         <strong>25,000</strong>원
                     </div>
@@ -121,35 +121,35 @@
                 <!-- 소지금 div 끝 -->
                 
                 <!-- 획득한 음료 아티클 시작 -->
-                <article class="beverage-inventory pc-background right-bottom">
+                <article class="inventory back-color white right-bottom">
                     <h2>획득한 음료</h2>
 
-                    <ol class="show-list">
-                        <li class="list-item">
+                    <ol class="scroll-list">
+                        <li class="scroll-list__item">
                             <img src="./assets/images/original_cola.png" alt="">
-                            <strong class="item-name" aria-label="음료 명">Original_Cola</strong>
-                            <div class="item-count" aria-label="구매 수량">
+                            <strong class="scroll-list__item-name" aria-label="음료 명">Original_Cola</strong>
+                            <div class="scroll-list__item-count" aria-label="구매 수량">
                                 1<span class="ir_pm">개</span>
                             </div>
                         </li>
-                        <li class="list-item">
+                        <li class="scroll-list__item">
                             <img src="./assets/images/green_cola.png" alt="">
-                            <strong class="item-name" aria-label="음료 명">Green_Cola</strong>
-                            <div class="item-count" aria-label="구매 수량">
+                            <strong class="scroll-list__item-name" aria-label="음료 명">Green_Cola</strong>
+                            <div class="scroll-list__item-count" aria-label="구매 수량">
                                 2<span class="ir_pm">개</span>
                             </div>
                         </li>
-                        <li class="list-item">
+                        <li class="scroll-list__item">
                             <img src="./assets/images/orange_cola.png" alt="">
-                            <strong class="item-name" aria-label="음료 명">Orange_Cola</strong>
-                            <div class="item-count" aria-label="구매 수량">
+                            <strong class="scroll-list__item-name" aria-label="음료 명">Orange_Cola</strong>
+                            <div class="scroll-list__item-count" aria-label="구매 수량">
                                 1<span class="ir_pm">개</span>
                             </div>
                         </li>
-                        <li class="list-item">
+                        <li class="scroll-list__item">
                             <img src="./assets/images/viloet_cola.png" alt="">
-                            <strong class="item-name" aria-label="음료 명">Violet_Cola</strong>
-                            <div class="item-count" aria-label="구매 수량">
+                            <strong class="scroll-list__item-name" aria-label="음료 명">Violet_Cola</strong>
+                            <div class="scroll-list__item-count" aria-label="구매 수량">
                                 5<span class="ir_pm">개</span>
                             </div>
                         </li>

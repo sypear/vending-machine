@@ -1,112 +1,54 @@
-:root {
-    /* Colors */
-    --black: #000000;
-    --darkGray: #333333;
-    --lightPurple: #EAE8FE;
-    --lightGray: #BDBDBD;
-    --purple: #6327FE;
-    --white: #FFFFFF;
-}
-
-/* 헤더 내부 요소 스타일 */
-.title-wrapper {
-    margin: 0 auto 18px;
-}
-
+/* 헤더 */
 .title-img {
     display: block;
     width: 167px;
 }
 
-/* 판매중인 음료 목록 아티클 내부 요소 스타일 */
-.beverage-list {
+/* 판매중인 음료 목록 */
+.product {
     margin-bottom: 20px;
 }
 
-.beverage-item {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 94px;
-    padding: 11px 5px 9px;
-    border-radius: 10px;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    overflow: hidden;
+/* 음료 구매 아티클 */
+.buy {
+    display: grid;
+    grid-template-columns: 200px 94px;
+    grid-template-rows: 32px 32px 108px;
+    column-gap: 12px;
+    row-gap: 12px;
 }
 
-.beverage-item img {
-    width: 36px;
-    height: 65px;
-    margin-bottom: 6px;
+.product-buy {
+    width: 100%;
+    margin-bottom: 20px;
 }
 
-.beverage-item h3 {
-    font-size: 9px;
-    color: var(--darkGray);
-    margin-bottom: 7px;
-    text-align: center;
-}
-
-.beverage-item .beverage-item__price {
-    padding: 5px 15px 5px 16px;
-    font-size: 12px;
-    color: var(--white);
-    border-radius: 50px;
-    background-color: var(--purple);
-}
-
-.beverage-item.select {
-    outline: 3px solid var(--purple);
-}
-
-.beverage-item.sold-out {
-    cursor: initial;
-}
-
-.beverage-item.sold-out::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    background-image: url('./../assets/images/sold_out.png');
-    background-repeat: no-repeat;
-    background-size: 58px auto;
-    background-position: 50% 20px;
-}
-
-/* 음료 구매 아티클 내부 요소 스타일 */
 /* 잔액 조회 및 거스름돈 반환하기 */
-.inquiry-and-return {
+.buy__manage-money {
     display: contents;
 }
 
-.inquiry-and-return .balance {
+.buy__manage-money .balance {
     display: flex;
     align-items: center;
     padding: 6px 10px;
 }
 
-.inquiry-and-return span {
+.buy__manage-money span {
     margin-left: auto;
 }
 
 /* 음료 살 돈 입금하기 */
-.deposit {
+.buy__put-money {
     display: contents;
 }
 
 /* 음료 구매하기 */
-.buy {
+.buy__choice {
     display: contents;
 }
 
-/* 소지금 div 내부 요소 스타일 */
+/* 소지금 div */
 .money {
     display: flex;
     justify-content: center;
@@ -114,6 +56,7 @@
     width: 100%;
     height: 32px;
     padding: 6px 10px;
+    margin-bottom: 41px;
 }
 
 .money h2 {
@@ -124,27 +67,31 @@
     font-weight: 700;
 }
 
-/* 획득한 음료 아티클 내부 요소 스타일 */
-.beverage-inventory h2 {
+/* 획득한 음료 아티클 */
+.inventory {
+    width: 100%;
+}
+
+.inventory h2 {
     margin-bottom: 13px;
     font-size: 14px;
     font-weight: 700;
     text-align: center;
 }
 
-.beverage-inventory .show-list {
+.inventory .scroll-list {
     height: 364px;
     margin-bottom: 6px;
 }
 
-.beverage-inventory .sum-money {
+.inventory .sum-money {
     display: block;
     font-size: 12px;
     text-align: right;
 }
 
-/* 동일 스타일 */
-.inquiry-and-return .balance span::after,
+/* 중복 스타일 */
+.buy__manage-money .balance span::after,
 .money h2::after,
 .sum-money span::after {
     content: ' :';
@@ -152,7 +99,7 @@
     top: 1px;
 }
 
-.inquiry-and-return .balance strong,
+.buy__manage-money .balance strong,
 .money strong {
     flex-grow: 1;
     text-align: right;
@@ -160,11 +107,37 @@
 
 /* 반응형 디자인 */
 @media (min-width: 992px) {
-    .title-wrapper {
-        margin-bottom: 67px;
-    }
-
     .title-img {
         width: 386px;
+    }
+
+    .vending-machine .right {
+        width: 360px;
+    }
+
+    .vending-machine .left {
+        padding: 29px 27px 28px;
+        margin-right: 28px;
+    }
+
+    .vending-machine .right-top {
+        padding: 9px 27px;
+        margin-bottom: 20px;
+    }
+
+    .vending-machine .right-bottom {
+        padding: 25px 27px 26px;
+    }
+    
+    .product-buy {
+        margin-bottom: initial;
+    }
+
+    .money {
+        margin-bottom: initial;
+    }
+
+    .inventory {
+        height: 474px;
     }
 }
