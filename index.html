@@ -31,38 +31,7 @@
                 <article class="product">
                     <h2 class="ir_pm">판매중인 음료 목록</h2>
                     
-                    <ul class="box-list">
-                        <li class="item select" aria-label="선택한 상품">
-                            <img src="./assets/images/original_cola.png" alt="">
-                            <h3>Original_Cola</h3>
-                            <strong class="item-price">1000원</strong>
-                        </li>
-                        <li class="item sold-out" aria-label="품절된 상품">
-                            <img src="./assets/images/viloet_cola.png" alt="">
-                            <h3>Violet_Cola</h3>
-                            <strong class="item-price">1000원</strong>
-                        </li>
-                        <li class="item">
-                            <img src="./assets/images/yellow_cola.png" alt="">
-                            <h3>Yellow_Cola</h3>
-                            <strong class="item-price">1000원</strong>
-                        </li>
-                        <li class="item">
-                            <img src="./assets/images/cool_cola.png" alt="">
-                            <h3>Cool_Cola</h3>
-                            <strong class="item-price">1000원</strong>
-                        </li>
-                        <li class="item select" aria-label="선택한 상품">
-                            <img src="./assets/images/green_cola.png" alt="">
-                            <h3>Green_Cola</h3>
-                            <strong class="item-price">1000원</strong>
-                        </li>
-                        <li class="item">
-                            <img src="./assets/images/orange_cola.png" alt="">
-                            <h3>Orange_Cola</h3>
-                            <strong class="item-price">1000원</strong>
-                        </li>
-                    </ul>
+                    <ul class="box-list"></ul>
                 </article>
                 <!-- 판매중인 음료 목록 섹션 끝 -->
 
@@ -88,7 +57,7 @@
                         <div class="buy__choice">
                             <h3 class="ir_pm">선택한 음료 확인하고 구매하기</h3>
                             <ol class="scroll-list">
-                                <li class="scroll-list__item">
+                                <!-- <li class="scroll-list__item">
                                     <img src="./assets/images/original_cola.png" alt="">
                                     <strong class="scroll-list__item-name" aria-label="음료 명">Original_Cola</strong>
                                     <div class="scroll-list__item-count" aria-label="선택 수량">
@@ -101,9 +70,9 @@
                                     <div class="scroll-list__item-count" aria-label="선택 수량">
                                         2<span class="ir_pm">개</span>
                                     </div>
-                                </li>
+                                </li> -->
                             </ol>
-                            <button type="button" class="round-button purple">획득</button>
+                            <button type="button" id="buy-button" class="round-button purple">획득</button>
                         </div>
                     </div>
                 </article>
@@ -125,7 +94,7 @@
                     <h2>획득한 음료</h2>
 
                     <ol class="scroll-list">
-                        <li class="scroll-list__item">
+                        <!-- <li class="scroll-list__item">
                             <img src="./assets/images/original_cola.png" alt="">
                             <strong class="scroll-list__item-name" aria-label="음료 명">Original_Cola</strong>
                             <div class="scroll-list__item-count" aria-label="구매 수량">
@@ -152,11 +121,12 @@
                             <div class="scroll-list__item-count" aria-label="구매 수량">
                                 5<span class="ir_pm">개</span>
                             </div>
-                        </li>
+                        </li> -->
                     </ol>
 
                     <strong class="sum-money">
-                        <span>총금액</span> <strong>9,000</strong>원
+                        <span>총금액</span>
+                        <strong id="sum-money-text"></strong>원
                     </strong>
                 </article>
             </div>

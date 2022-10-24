@@ -49,6 +49,10 @@ body, button, input {
     background-color: var(--purple);
 }
 
+.item:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
 .item.select {
     outline: 3px solid var(--purple);
 }
