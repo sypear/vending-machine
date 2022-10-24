@@ -9,10 +9,10 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="./assets/favicon/site.webmanifest">
-    <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="./styles/layout.css">
-    <link rel="stylesheet" href="./styles/common.css">
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <div class="wrapper">
@@ -74,15 +74,15 @@
                         <div class="buy__manage-money">
                             <h3 class="ir_pm">나의 잔액 조회 및 거스름돈 반환하기</h3>
                             <div class="balance text-box purple">
-                                <span>잔액</span> <strong>1,000</strong>원
+                                <span>잔액</span> <strong id="balance-text">0</strong>원
                             </div>
-                            <button type="button" class="round-button white">거스름돈 반환</button>
+                            <button type="button" id="return-button" class="round-button white">거스름돈 반환</button>
                         </div>
 
                         <div class="buy__put-money">
                             <h3 class="ir_pm">음료 살 돈 입금하기</h3>
-                            <input type="number" placeholder="입금액 입력" class="text-input">
-                            <button type="button" class="round-button white">입금</button>
+                            <input type="number" id="deposit-input" placeholder="입금액 입력" class="text-input">
+                            <button type="button" id="deposit-button" class="round-button white">입금</button>
                         </div>
 
                         <div class="buy__choice">
@@ -115,7 +115,7 @@
                 <div class="back-color white right-top">
                     <div class="money text-box purple">
                         <h2>소지금</h2>
-                        <strong>25,000</strong>원
+                        <strong id="money-text">0</strong>원
                     </div>
                 </div>
                 <!-- 소지금 div 끝 -->
@@ -163,5 +163,7 @@
             <!-- 획득한 음료 아티클 끝 -->
         </section>
     </div>
+
+    <script src="./js/script.js"></script>
 </body>
 </html>
