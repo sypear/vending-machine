@@ -143,6 +143,13 @@ buyButton.addEventListener("click", () => {
         return;
     };
 
+    // choiceItems.forEach(choiceItem => {
+    //     buyList.appendChild(choiceItem);
+
+    //     // 총금액 갱신
+    //     console.log(choiceItem);
+    // });
+
     items.forEach(item => {
         item.classList.remove("select");
     });
