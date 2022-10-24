@@ -1,5 +1,5 @@
 # 벤딩머신
-![24](https://user-images.githubusercontent.com/105365737/191926220-70534b36-e4fd-406f-aa9b-b164f0b5638b.gif)
+![반응형 시연2](https://user-images.githubusercontent.com/105365737/193167576-ccecd4fc-4825-4828-939e-ba26dcb6d661.png)
 ## 멋쟁이 사자처럼 프론트엔드 스쿨 과제 - <b>벤딩머신</b><br>
 > 과제 내용
 > * 미디어 쿼리를 이용한 반응형 페이지 퍼블리싱
