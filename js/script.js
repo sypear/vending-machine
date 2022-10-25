@@ -52,6 +52,36 @@ function showBeverageItem(beverage) {
             `;
 };
 
+boxList.addEventListener("click", () => {
+    let target = undefined;
+
+    if (event.target.nodeName === "LI") {
+        target = event.target;
+    } else if (event.target.parentNode.nodeName === "LI") {
+        target = event.target.parentNode;
+    } else {
+        return;
+    };
+
+    const targetId = target.getAttribute("data-id");
+
+    // 재고 검사
+    if (beverageList[targetId].stock === 0) {
+        alert("품절된 상품입니다!");
+        return;
+    };
+
+    // 재고가 있다면 재고 -1. 재고 -1 후 재고가 0이 되면 품절 이미지 띄우기
+    beverageList[targetId].stock--;
+
+    if (beverageList[targetId].stock === 0) {
+        target.classList.add("sold-out");
+        target.classList.remove("select");
+    } else {
+        target.classList.add("select");
+    };
+});
+
 function returnBalance() {
     if (balance === 0) {
         alert("잔액이 0원입니다!");
