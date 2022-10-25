@@ -58,7 +58,7 @@ function showBeverageItem(beverage) {
             </li>`;
 };
 
-boxList.addEventListener("click", () => {
+function selectBeverage() {
     let target = checkTarget(event.target);
 
     if (!target) {
@@ -78,13 +78,13 @@ boxList.addEventListener("click", () => {
 
     // 선택 목록에 추가하기
     addChoiceList(target, targetId);
-});
+};
 
 function checkTarget(target) {
-    if (event.target.nodeName === "LI") {
-        return event.target;
-    } else if (event.target.parentNode.nodeName === "LI") {
-        return event.target.parentNode;
+    if (target.nodeName === "LI") {
+        return target;
+    } else if (target.parentNode.nodeName === "LI") {
+        return target.parentNode;
     } else {
         return;
     };
@@ -122,6 +122,11 @@ function addChoiceList(target, targetId) {
         }
     }
 };
+
+function buyBeverage() {
+
+}
+
 
 function returnBalance() {
     if (balance === 0) {
@@ -165,5 +170,7 @@ function resetdepositInput() {
     depositInput.focus();
 }
 
+boxList.addEventListener("click", selectBeverage);
+buyButton.addEventListener("click", buyBeverage);
 returnButton.addEventListener("click", returnBalance);
 depositButton.addEventListener("click", depositBalance);
