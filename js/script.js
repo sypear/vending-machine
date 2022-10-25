@@ -4,7 +4,7 @@ const returnButton = document.querySelector("#return-button");
 const depositButton = document.querySelector("#deposit-button");
 const depositInput = document.querySelector("#deposit-input");
 const boxList = document.querySelector(".box-list");
-const choiceList = document.querySelector(".buy__choice > .scroll-list");
+const cartList = document.querySelector(".buy__cart > .scroll-list");
 const buyButton = document.querySelector("#buy-button");
 const buyList = document.querySelector(".inventory .scroll-list");
 const sumMoneyText = document.querySelector("#sum-money-text");
@@ -13,8 +13,8 @@ let originalBeverageList = [];
 let beverageList = [];
 let choiceCount = [];
 
-let money = 5000;
-let balance = 10000;
+let money = 10000;
+let balance = 30000;
 let deposit = undefined;
 let sumMoney = 0;
 
@@ -41,29 +41,38 @@ getBeverageList()
     })
     .then(beverageList => {
         beverageList.forEach(beverage => {
-            const beverageHTML = showBeverageItem(beverage);
-            boxList.insertAdjacentHTML('beforeend', beverageHTML);
+            const liEl = document.createElement("li");
+            liEl.classList.add("item");
+            liEl.setAttribute("data-id", beverage.id);
+
+            const imgEl = document.createElement("img");
+            imgEl.setAttribute("src", `./assets/images/${beverage.photo}`);
+            liEl.appendChild(imgEl);
+
+            const h3El = document.createElement("h3");
+            h3El.ariaLabel = "음료 명";
+            h3El.textContent = beverage.title;
+            liEl.appendChild(h3El);
+
+            const strongEl = document.createElement("strong");
+            strongEl.classList.add("item-price");
+            strongEl.ariaLabel = "가격";
+            strongEl.textContent = `${beverage.price}원`;
+            liEl.appendChild(strongEl);
+
+            boxList.appendChild(liEl);
         });
+
+        console.log("자판기", beverageList);
     })
     .catch(error => {
         console.error(error);
         alert("페이지에 문제가 발생했습니다.");
     });
 
-function showBeverageItem(beverage) {
-    return `<li class="item" data-id="${beverage.id}">
-                <img src="./assets/images/${beverage.photo}" alt="">
-                <h3 aria-label="음료 명">${beverage.title}</h3>
-                <strong class="item-price" aria-label="가격">${beverage.price}원</strong>
-            </li>`;
-};
-
 function selectBeverage() {
     let target = checkTarget(event.target);
-
-    if (!target) {
-        return;
-    }
+    if (!target) return;
 
     const targetId = target.getAttribute("data-id");
 
@@ -73,11 +82,20 @@ function selectBeverage() {
         return;
     };
 
-    // 재고가 있다면 재고 -1. 재고 -1 후 재고가 0이 되면 품절 이미지 띄우기
-    selectTargetItem(target, targetId);
+    // 잔액 검사
+    if (beverageList[targetId].price > balance) {
+        alert("잔액이 부족합니다.");
+        return;
+    }
 
-    // 선택 목록에 추가하기
-    addChoiceList(target, targetId);
+    // 재고가 있다면 재고 -1. 재고 -1 후 재고가 0이 되면 품절 이미지 띄우기
+    selectItem(target, targetId);
+
+    // 잔액 감소
+    reduceBalance(targetId);
+
+    // 장바구니 목록에 추가하기
+    addCartList(targetId);
 };
 
 function checkTarget(target) {
@@ -90,7 +108,7 @@ function checkTarget(target) {
     };
 };
 
-function selectTargetItem(target, targetId) {
+function selectItem(target, targetId) {
     beverageList[targetId].stock--;
     beverageList[targetId].count++;
 
@@ -102,31 +120,117 @@ function selectTargetItem(target, targetId) {
     };
 };
 
-function addChoiceList(target, targetId) {
-    if (beverageList[targetId].count === 1) {
-        const choiceBeverageHTML = `<li class="scroll-list__item" data-id="${targetId}">
-                                        <img src="./assets/images/${beverageList[targetId].photo}" alt="">
-                                        <strong class="scroll-list__item-name" aria-label="음료 명">${beverageList[targetId].title}</strong>
-                                        <div class="scroll-list__item-count" aria-label="선택 수량">1<span class="ir_pm">개</span>
-                                        </div>
-                                    </li>`;
-        choiceList.insertAdjacentHTML('beforeend', choiceBeverageHTML);
-    } else {
-        const choiceItems = document.querySelectorAll(".buy__choice .scroll-list__item");
-        
-        for (const item of choiceItems) {
-            if (item.getAttribute("data-id") === targetId) {
-                const itemCountText = item.querySelector(".scroll-list__item-count");
-                itemCountText.innerHTML = `${beverageList[targetId].count}<span class="ir_pm">개</span>`;
-            }
-        }
-    }
+function reduceBalance(targetId) {
+    balance -= beverageList[targetId].price;
+    balanceText.textContent = balance;
 };
 
+let cart = [];
+
+function addCartList(targetId) {
+    const cartIndex = cart.findIndex(item => item.id === targetId);
+
+    if (cartIndex === -1) {
+        // 처음 선택한 경우
+        cart.push({
+            "id": targetId,
+            "title": beverageList[targetId].title,
+            "photo": beverageList[targetId].photo,
+            "price": beverageList[targetId].price,
+            "count": 1,
+        });
+
+        // 화면에 추가
+        const liEl = document.createElement("li");
+        liEl.classList.add("scroll-list__item");
+        liEl.setAttribute("data-id", targetId);
+
+        const imgEl = document.createElement("img");
+        imgEl.setAttribute("src", `./assets/images/${beverageList[targetId].photo}`);
+        liEl.appendChild(imgEl);
+
+        const h3El = document.createElement("h3");
+        h3El.classList.add("scroll-list__item-name");
+        h3El.ariaLabel = "음료 명";
+        h3El.textContent = beverageList[targetId].title;
+        liEl.appendChild(h3El);
+
+        const divEl = document.createElement("div");
+        divEl.classList.add("scroll-list__item-count");
+        divEl.ariaLabel = "선택 수량";
+        divEl.textContent = 1;
+        liEl.appendChild(divEl);
+
+        cartList.appendChild(liEl);
+
+        return;
+    }
+
+    // 이미 선택된 경우 카운트 증가
+    cart[cartIndex].count++;
+
+    // 화면에 갱신
+    const cartItems = cartList.querySelectorAll(".scroll-list__item");
+
+    cartItems.forEach(item => {
+        if (item.getAttribute("data-id") === targetId) {
+            item.querySelector(".scroll-list__item-count").textContent = cart[cartIndex].count;
+        };
+    });
+};
+
+const buyBeverageMap = new Map();
+
 function buyBeverage() {
+    cart.forEach(item => {
+        sumMoney += (item.price * item.count);
 
-}
+        if (!buyBeverageMap.has(item.id)) {
+            buyBeverageMap.set(item.id, item);
 
+            // 화면에 획득한 음료 뿌려주기
+            const liEl = document.createElement("li");
+            liEl.classList.add("scroll-list__item");
+            liEl.setAttribute("data-id", item.id);
+
+            const imgEl = document.createElement("img");
+            imgEl.setAttribute("src", `./assets/images/${item.photo}`);
+            liEl.appendChild(imgEl);
+
+            const h3El = document.createElement("h3");
+            h3El.classList.add("scroll-list__item-name");
+            h3El.ariaLabel = "음료 명";
+            h3El.textContent = item.title;
+            liEl.appendChild(h3El);
+
+            const divEl = document.createElement("div");
+            divEl.classList.add("scroll-list__item-count");
+            divEl.ariaLabel = "구매 수량";
+            divEl.textContent = item.count;
+            liEl.appendChild(divEl);
+
+            buyList.appendChild(liEl);
+
+            return;
+        };
+
+        // 이미 있는 음료면 카운트 증가하고 화면에 뿌려주기
+        buyBeverageMap.get(item.id).count += item.count;
+        const targetItem = buyList.querySelector(`.scroll-list__item[data-id='${item.id}']`);
+        targetItem.childNodes[2].textContent = buyBeverageMap.get(item.id).count;
+    });
+
+    // 카트에 있는 애들 비우고 화면도 비우기
+    cart = [];
+    cartList.innerHTML = '';
+
+    boxList.querySelectorAll("li").forEach(item => {
+        item.classList.remove("select");
+    });
+
+    // 총 금액 갱신
+    sumMoneyText.textContent = sumMoney;
+};
 
 function returnBalance() {
     if (balance === 0) {
